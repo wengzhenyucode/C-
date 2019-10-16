@@ -36,6 +36,7 @@ namespace 最长回文子串查找
                 l--;
                 r++;
             }
+            //截取子字符串
             return str.Substring(l + 1, r - l -1);
         }
         private static string LongestPalindrome(string s)
