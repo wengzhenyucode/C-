@@ -23,7 +23,45 @@ namespace 构造数组的MaxTree
         {
             int[] arr = { 3, 4, 5, 1, 2 };
             Node head = getMaxTree(arr);
+            PreOrderTraverse(head);
+            InOrderTraverse(head);
+            PostOrderTraverse(head);
 
+            Console.ReadKey();
+
+        }
+        //二叉树前序遍历
+        public static void PreOrderTraverse(Node n)
+        {
+            if (n == null)
+            {
+                return;
+            }
+            Console.WriteLine("{0}", n.value);
+            PreOrderTraverse(n.left);
+            PreOrderTraverse(n.right);
+        }
+        //二叉树中序遍历
+        public static void InOrderTraverse(Node n)
+        {
+            if (n == null)
+            {
+                return;
+            }
+            InOrderTraverse(n.left);
+            Console.WriteLine("{0}",n.value);
+            InOrderTraverse(n.right);
+        }
+        //二叉树后序遍历
+        public static void PostOrderTraverse(Node n)
+        {
+            if (n == null)
+            {
+                return;
+            }
+            PostOrderTraverse(n.left);
+            PostOrderTraverse(n.right);
+            Console.WriteLine("{0}",n.value);
         }
 
         public static Node getMaxTree(int[] arr)
